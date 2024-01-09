@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UIElements;
 
 public interface ITakeDamage
 {
@@ -43,6 +43,11 @@ public class EnemyScript : MonoBehaviour
         {
             timer = 0f;
             shoot();
+        }
+
+        if (transform.position.y < -18)
+        {
+            Destroy(gameObject);
         }
     }
 

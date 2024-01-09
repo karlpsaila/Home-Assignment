@@ -11,7 +11,7 @@ public class GameData : MonoBehaviour
     private static int _playerhealth = 150;
     private static int _score = 0;
     private static int _kills = 0;
-    public static int HighScore;
+    public static int _HighScore;
 
 
     public static int PlayerHealth
@@ -34,6 +34,11 @@ public class GameData : MonoBehaviour
     }
 
 
+    public static int HighScore
+    {
+        get { return _HighScore; }
+        set { _HighScore = value; }
+    }
 
     private static float _padding = 1f;
 

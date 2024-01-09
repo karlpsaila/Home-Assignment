@@ -246,12 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 10
-  start_strength: 10
+  hitpoints: 8
+  start_strength: 8
   start_speed: 2
-  _strength: 10
+  _strength: 8
   enemyBullet: {fileID: 3224000281307492332, guid: 2a12c48c263ae6e4e80108c71f244870, type: 3}
-  bulletPos: {fileID: 0}
 --- !u!114 &-5653546895599358056
 MonoBehaviour:
   m_ObjectHideFlags: 0
