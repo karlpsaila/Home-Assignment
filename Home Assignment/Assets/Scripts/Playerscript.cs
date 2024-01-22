@@ -38,7 +38,8 @@ public class Playerscript : MonoBehaviour
         Countdown();
         GameOver();
 
-        healthBar.fillAmount = Mathf.Clamp(GameData.PlayerHealth / maxHealth, 0, 1);
+        
+        UpdateHealthBar();
     }
 
     void FixedUpdate()
@@ -171,6 +172,15 @@ public class Playerscript : MonoBehaviour
         }
     }
 
+    public void UpdateHealthBar()
+    {
+        Debug.Log("Updating health bar...");
+
+        float fillAmount = Mathf.Clamp(GameData.PlayerHealth / maxHealth, 0, 1);
+       
+        healthBar.fillAmount = fillAmount;
+
+    }
 
 
 }

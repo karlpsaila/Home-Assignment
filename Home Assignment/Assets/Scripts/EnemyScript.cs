@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public interface ITakeDamage
 {
@@ -11,6 +13,8 @@ public interface ITakeDamage
 
 public class EnemyScript : MonoBehaviour
 {
+   
+
     bool canbeDestroyed = false;
 
     public int hitpoints;
@@ -23,6 +27,7 @@ public class EnemyScript : MonoBehaviour
 
     protected float timer;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.y < 14f)
         {
             canbeDestroyed = true;
@@ -53,30 +59,35 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!canbeDestroyed)
+        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("charged"))
         {
-           return;
+            ITakeDamage takeDamageComponent = other.gameObject.GetComponent<ITakeDamage>();
+
+            // Check if the component is not null before using it
+            if (takeDamageComponent != null)
+            {
+                takeDamageComponent.ApplyDamage(hitpoints, true);
+            }
+            else
+            {
+                Debug.LogError("ITakeDamage component not found on the bullet or charged object.");
+            }
         }
-        if (other.gameObject.tag == "Bullet")
-        {
-            // Example usage when hit by a regular item
-            GetComponent<ITakeDamage>().ApplyDamage(hitpoints, false);
-
-        }
-        else if(other.gameObject.tag == "charged")
-        {
-            // Example usage when hit by a charged item
-            GetComponent<ITakeDamage>().ApplyDamage(hitpoints, true);
-
-        }
-
-
     }
+
 
     void shoot()
     {
-       Instantiate(enemyBullet, transform.position, Quaternion.identity);
+       if (SceneManager.GetActiveScene().name == "StartScreen")
+        {
+
+        }
+       else
+        {
+            Instantiate(enemyBullet, transform.position, Quaternion.identity);
+        }
 
     }
+
 
 }

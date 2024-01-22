@@ -5,6 +5,8 @@ using UnityEngine;
 public class RandomSpawn : MonoBehaviour
 {
     public List<EnemySO> enemyList = new List<EnemySO>();
+
+
     // Start is called before the first frame update
     void Start()
     {

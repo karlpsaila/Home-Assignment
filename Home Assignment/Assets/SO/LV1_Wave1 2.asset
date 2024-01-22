@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 5415333413269850665, guid: 592d1b3b248e46145afa3cb7c90f2db4, type: 3}
   - {fileID: 8220578561246331141, guid: 240c1713523a1f841be66538b6e6bd18, type: 3}
   - {fileID: 5297485072753615563, guid: 0363f34a3d69bc54c89633f5e2e7cdcd, type: 3}
-  <TimeBetweenSpawns>k__BackingField: 3
+  <TimeBetweenSpawns>k__BackingField: 4
   <NumberToSpawn>k__BackingField: 10

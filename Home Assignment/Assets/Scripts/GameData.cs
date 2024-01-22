@@ -13,6 +13,9 @@ public class GameData : MonoBehaviour
     private static int _kills = 0;
     public static int _HighScore;
 
+    public const float Min_Volume = 0f;
+    public const float Max_Volume = 1f;
+
 
     public static int PlayerHealth
     {

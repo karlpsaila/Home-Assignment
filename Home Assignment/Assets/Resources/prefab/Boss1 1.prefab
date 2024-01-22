@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab7dc4dbb6580448fa936f2be38572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 25
   start_strength: 30
   start_speed: 0
   _strength: 30
