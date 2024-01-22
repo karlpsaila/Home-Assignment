@@ -5,7 +5,7 @@ using System.IO;
 
 using System.Runtime.Serialization.Formatters.Binary;
 
-public class SaveManager
+public class SaveManager : MonoBehaviour
 {
     const string Master_Volume_Key = "master volume";
     const string Difficulty_Key = "difficulty";
@@ -23,6 +23,10 @@ public class SaveManager
             Debug.LogError("Master volume is out of range");
         }
         PlayerPrefs.SetFloat(Master_Volume_Key, volume);
+    }
+    public static float GetMasterVolume()
+    {
+        return PlayerPrefs.GetFloat(Master_Volume_Key);
     }
 
     public void SaveData()

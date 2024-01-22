@@ -770,7 +770,7 @@ MonoBehaviour:
   hitpoints: 50
   start_strength: 20
   start_speed: 30
-  _strength: 0
+  _strength: 20
   enemyBullet: {fileID: 3224000281307492332, guid: 2a12c48c263ae6e4e80108c71f244870, type: 3}
 --- !u!114 &1105126101730673306
 MonoBehaviour:

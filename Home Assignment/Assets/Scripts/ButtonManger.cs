@@ -13,7 +13,6 @@ public class ButtonManger : MonoBehaviour
     {
         foreach (var button in buttons)
         {
-            // Assuming button names are "Start" and "Exit" for respective functionality
             if (button.name == "Play")
             {
                 button.onClick.AddListener(StartGame);
@@ -26,6 +25,10 @@ public class ButtonManger : MonoBehaviour
             {
                 button.onClick.AddListener(Settings);
             }
+            else if (button.name == "Back")
+            {
+                button.onClick.AddListener(MainMenu);
+            }
             else
             {
                 Debug.Log("Button name not found");
@@ -33,8 +36,12 @@ public class ButtonManger : MonoBehaviour
 
             // Add a generic listener for all buttons
             button.onClick.AddListener(() => PrintMsg(button.name));
+
+            // Log a message to check if the listener is added
+            Debug.Log("Listener added for button: " + button.name);
         }
     }
+
 
     void StartGame()
     {
@@ -60,6 +67,15 @@ public class ButtonManger : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
     
+    void MainMenu()
+    {
+        Options optionsInstance = FindObjectOfType<Options>();
+        SaveManager.SetMasterVolume(optionsInstance.volumeslider.value);
+        Debug.Log("Openning Main Menu");
+        SceneManager.LoadScene("Level1");
+
+
+    }
 
     void PrintMsg(string buttonName)
     {

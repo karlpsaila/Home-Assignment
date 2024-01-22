@@ -34,8 +34,6 @@ public class WaveSpawner : MonoBehaviour
 
                 timeBtwnSpawns = Time.time + currentWave.TimeBetweenSpawns;
             }
-
-            Debug.Log(Time.time);
         }
     }
 

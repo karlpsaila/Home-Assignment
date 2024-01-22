@@ -59,19 +59,13 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("charged"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
-            ITakeDamage takeDamageComponent = other.gameObject.GetComponent<ITakeDamage>();
-
-            // Check if the component is not null before using it
-            if (takeDamageComponent != null)
-            {
-                takeDamageComponent.ApplyDamage(hitpoints, true);
-            }
-            else
-            {
-                Debug.LogError("ITakeDamage component not found on the bullet or charged object.");
-            }
+            GetComponent<ITakeDamage>().ApplyDamage(hitpoints,false);
+        }
+        if (other.gameObject.CompareTag("charged"))
+        {
+            GetComponent<ITakeDamage>().ApplyDamage(hitpoints,true);
         }
     }
 
