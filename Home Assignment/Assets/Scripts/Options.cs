@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class Options : MonoBehaviour
 {
     [SerializeField]  public Slider volumeslider;
-    [SerializeField] float defaultVolume = 0.8f;
+    [SerializeField] public Slider difficultSlider;
 
     
     void Start()
     {
         volumeslider.value = SaveManager.GetMasterVolume();
+        difficultSlider.value = SaveManager.GetDifficulty();
     }
 
     // Update is called once per frame
@@ -26,6 +27,9 @@ public class Options : MonoBehaviour
         {
             Debug.LogWarning("No music player found");
         }
+
+        SaveManager.SetDifficulty(difficultSlider.value);
+
     }
 
   

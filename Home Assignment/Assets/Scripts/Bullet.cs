@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
         // Check if the current GameObject has the tag "Bullet"
         if (gameObject.CompareTag("Bullet"))
         {
-            if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyBullet"))
+            if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Boss1") || collision.gameObject.CompareTag("Boss2"))
             {
                 Destroy(gameObject);
             }

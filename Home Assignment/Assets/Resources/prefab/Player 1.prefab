@@ -665,6 +665,7 @@ MonoBehaviour:
   boost: 2
   bulletFiringPeriod: 0.18
   healthBar: {fileID: 0}
+  shootingSound: {fileID: 8300000, guid: e75df5cd9c1f944ce99e585d983fa119, type: 3}
 --- !u!50 &1618978772367501816
 Rigidbody2D:
   serializedVersion: 4

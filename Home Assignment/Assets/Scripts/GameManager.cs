@@ -4,44 +4,31 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : MonoBehaviour
 {
 
     [SerializeField] Text scoreText;
     [SerializeField] Text HighScore;
 
-    SaveManager mySaveLoadManager;
+    [SerializeField] Text kills;
+    [SerializeField] Text MostKills;
+
+
 
     void Start()
     {
+
+
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            mySaveLoadManager = new SaveManager();
             GameData.HighScore = PlayerPrefs.GetInt("HighScore");
-            mySaveLoadManager.LoadData();
         }
 
-        mySaveLoadManager = new SaveManager();
-        GameData.PlayerHealth = 20;
-        mySaveLoadManager.LoadData();
-
-
-    }
-
-    public void OnEnemyDie(int hitpoints)
-    {
-
-        GameData.Score += hitpoints;
-        Destroy(this.gameObject);
-        GameData.PlayerHealth += 10;
-        GameData.Kills += 1;
-
-        Playerscript playerScript = FindObjectOfType<Playerscript>();
-        if (playerScript != null)
+        if (PlayerPrefs.HasKey("MostKills"))
         {
-            playerScript.UpdateHealthBar();
+            GameData.Kills = PlayerPrefs.GetInt("MostKills");
         }
-        mySaveLoadManager.SaveData();
+
     }
 
     void Update()
@@ -52,21 +39,25 @@ public class GameManager : Singleton<GameManager>
             PlayerPrefs.SetInt("HighScore", GameData.HighScore);
             PlayerPrefs.Save();
         }
+        if (GameData.Kills > GameData.MostKills)
+        {
+            GameData.MostKills = GameData.Kills;
+            PlayerPrefs.SetInt("MostKills", GameData.MostKills);
+            PlayerPrefs.Save();
+        }
 
         scoreText.text = "Score: " + GameData.Score;
         HighScore.text = "High Score: " + GameData.HighScore;
 
-    }
-
-    public void PlayerDamage()
-    {
-        mySaveLoadManager.SaveData();
-        if (GameData.PlayerHealth <= 0)
+        kills.text = "Kills: " + GameData.Kills;
+        if(SceneManager.GetActiveScene().name == "Game Over")
         {
-            mySaveLoadManager.DeleteFile();
-            SceneManager.LoadScene("GameOver");
-        }
+            MostKills.text = "MostKills: " + GameData.MostKills;
 
+        }
+       
+
+        
     }
 
 }

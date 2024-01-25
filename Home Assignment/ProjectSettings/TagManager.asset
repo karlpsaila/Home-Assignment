@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - charged
   - EnemyBullet
+  - Boss1
+  - Boss2
+  - Boss3
   layers:
   - Default
   - TransparentFX

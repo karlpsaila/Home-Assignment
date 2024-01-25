@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5430347736560517523}
   - component: {fileID: 6174449154424064284}
   - component: {fileID: 4681418503550288012}
-  - component: {fileID: -5859143350571666170}
   m_Layer: 0
   m_Name: humans_ship_01
   m_TagString: Enemy
@@ -196,17 +195,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94db85ea7f24af94eafaa3f67ebdb3c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5859143350571666170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827816218778875579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7546eb1b9529c434c9157cd2b2495b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

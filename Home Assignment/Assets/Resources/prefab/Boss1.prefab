@@ -320,9 +320,10 @@ GameObject:
   - component: {fileID: 1078201233482092083}
   - component: {fileID: 2674884261093859921}
   - component: {fileID: 1105126101730673306}
+  - component: {fileID: -4862350050112546397}
   m_Layer: 0
-  m_Name: Boss1 1
-  m_TagString: Enemy
+  m_Name: Boss1
+  m_TagString: Boss1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,9 +769,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 50
-  start_strength: 20
+  start_strength: 50
   start_speed: 30
-  _strength: 20
+  _strength: 50
   enemyBullet: {fileID: 3224000281307492332, guid: 2a12c48c263ae6e4e80108c71f244870, type: 3}
 --- !u!114 &1105126101730673306
 MonoBehaviour:
@@ -791,6 +792,18 @@ MonoBehaviour:
   - {fileID: 5475844498439820840, guid: 77faa171dd1be2b4e80833cb3eac36c1, type: 3}
   Movementspeed: 2
   arrivalThreshold: 0.1
+--- !u!114 &-4862350050112546397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595095129531179022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94db85ea7f24af94eafaa3f67ebdb3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5197469146472593177
 GameObject:
   m_ObjectHideFlags: 0

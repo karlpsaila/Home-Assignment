@@ -8,7 +8,7 @@ public class SerializedData
 {
 
     public int ser_score;
-    public int ser_lives;
+    public int ser_Health;
 
     public int ser_kills;
 

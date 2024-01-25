@@ -20,8 +20,6 @@ public class WaveSpawner : MonoBehaviour
     private void Update()
     {
         // Check if the current scene is Level 1
-        if (SceneManager.GetActiveScene().name == "Level1")
-        {
             if (stopSpawning)
             {
                 return;
@@ -34,7 +32,6 @@ public class WaveSpawner : MonoBehaviour
 
                 timeBtwnSpawns = Time.time + currentWave.TimeBetweenSpawns;
             }
-        }
     }
 
     private IEnumerator SpawnWave()

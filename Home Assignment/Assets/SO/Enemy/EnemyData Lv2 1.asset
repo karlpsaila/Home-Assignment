@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f862753c004cc244b83402ad615f89f, type: 3}
+  m_Name: EnemyData Lv2 1
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 2340185062250465324, guid: 0975a72d606595548b26e70b7a2011cd, type: 3}
+  strength: 18
+  hitpoints: 18
+  speed: 18

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,16 +9,20 @@ using UnityEngine.UI;
 public class GameData : MonoBehaviour
 {
 
-    private static int _playerhealth = 150;
+    private static float _playerhealth = 150;
     private static int _score = 0;
     private static int _kills = 0;
+    private static int _MostKills;
     public static int _HighScore;
 
     public const float Min_Volume = 0f;
     public const float Max_Volume = 5f;
 
+    public const float Min_Difficulty = 0f;
+    public const float Max_Difficulty = 2f;
 
-    public static int PlayerHealth
+
+    public static float PlayerHealth
     {
         get { return _playerhealth; }
         set { _playerhealth = value; }
@@ -34,6 +39,12 @@ public class GameData : MonoBehaviour
     {
         get { return _kills; }
         set { _kills = value; }
+    }
+
+    public static int MostKills
+    {
+        get { return _MostKills; }
+        set { _MostKills = value; }
     }
 
 

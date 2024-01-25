@@ -11,9 +11,12 @@ public class Damage : MonoBehaviour, ITakeDamage
             EnemyScript _enemy = GetComponent<EnemyScript>();
             _enemy._strength--;
             StartCoroutine(ApplyDamageEffect());
+
+
             if (_enemy._strength <= 0)
             {
                 GameData.Score += hitpoints;
+                GameData.Kills ++;
                 Debug.Log("ScoreY: " + GameData.Score.ToString());
                 Destroy(this.gameObject);
             }
@@ -26,6 +29,7 @@ public class Damage : MonoBehaviour, ITakeDamage
             if (_enemy._strength <= 0)
             {
                 GameData.Score += hitpoints;
+                GameData.Kills++;
                 Debug.Log("Score: " + GameData.Score.ToString());
                 Destroy(this.gameObject);
             }
@@ -43,7 +47,7 @@ public class Damage : MonoBehaviour, ITakeDamage
 
         Color enemyColor = spriteRenderer.color;
         spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         // Reset the color back to normal (you can adjust the color as needed)
         spriteRenderer.color = enemyColor;

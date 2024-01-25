@@ -8,6 +8,8 @@ public class ButtonManger : MonoBehaviour
 {
     [SerializeField] List<Button> buttons; // List of buttons
 
+    public Animator transiction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,13 @@ public class ButtonManger : MonoBehaviour
             {
                 button.onClick.AddListener(Settings);
             }
-            else if (button.name == "Back")
+            else if (button.name == "Reset")
             {
                 button.onClick.AddListener(MainMenu);
+            }
+            else if (button.name == "Back")
+            {
+                button.onClick.AddListener(Back);
             }
             else
             {
@@ -46,7 +52,8 @@ public class ButtonManger : MonoBehaviour
     void StartGame()
     {
         Debug.Log("You have clicked the start button");
-        SceneManager.LoadScene("Level1");
+        StartCoroutine(LoadScene());
+
     }
 
     void QuitGame()
@@ -56,23 +63,30 @@ public class ButtonManger : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #elif UNITY_WEBPLAYER
         Application.OpenURL(webplayerQuitURL);
-#else
-        ApplicatKion.Quit();
 #endif
     }
 
     void Settings()
     {
         Debug.Log("Openning Settings");
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadSceneAsync("Settings");
     }
     
     void MainMenu()
     {
+       
+        Debug.Log("Openning Main Menu");
+        SceneManager.LoadScene("StartScreen");
+
+
+    }
+
+    void Back()
+    {
         Options optionsInstance = FindObjectOfType<Options>();
         SaveManager.SetMasterVolume(optionsInstance.volumeslider.value);
         Debug.Log("Openning Main Menu");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("StartScreen");
 
 
     }
@@ -81,4 +95,17 @@ public class ButtonManger : MonoBehaviour
     {
         Debug.Log(buttonName + " has been clicked");
     }
+
+
+    IEnumerator LoadScene()
+    {
+        
+
+
+        transiction.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadSceneAsync("Level1");
+    }
+
+    //SceneManager.LoadSceneAsync("Level1");
 }

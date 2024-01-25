@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3023965228167700886}
   - component: {fileID: 1447078713809313433}
   - component: {fileID: -5653546895599358056}
-  - component: {fileID: 4198037844195454977}
   m_Layer: 0
   m_Name: humans_boss_01
   m_TagString: Enemy
@@ -261,17 +260,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94db85ea7f24af94eafaa3f67ebdb3c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4198037844195454977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284546958202499422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7546eb1b9529c434c9157cd2b2495b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

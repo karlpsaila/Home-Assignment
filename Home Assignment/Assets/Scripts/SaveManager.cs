@@ -29,47 +29,22 @@ public class SaveManager : MonoBehaviour
         return PlayerPrefs.GetFloat(Master_Volume_Key);
     }
 
-    public void SaveData()
+    public static void SetDifficulty(float difficulty)
     {
-        SerializedData mySerializedData = new SerializedData();
-        mySerializedData.ser_score = GameData.Score;
-        mySerializedData.ser_lives = GameData.PlayerHealth;
-        mySerializedData.ser_kills = GameData.Kills;
-
-        BinaryFormatter bf = new BinaryFormatter();
-
-        FileStream myfile = File.Create(Application.persistentDataPath + "/CannonData.save");
-        Debug.Log(Application.persistentDataPath.ToString());
-        bf.Serialize(myfile, mySerializedData);  //Serialize and save
-        myfile.Close();
-        Debug.Log("FILE SAVED");
-
-    }
-
-    public void LoadData()
-    {
-        SerializedData mySerializedData = new SerializedData();
-
-        if (File.Exists(Application.persistentDataPath + "/CannonData.save"))
+        if (difficulty >= GameData.Min_Difficulty && difficulty <= GameData.Max_Difficulty)
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream myfile = File.Open(Application.persistentDataPath + "/CannonData.save", FileMode.Open);
-            mySerializedData = (SerializedData)bf.Deserialize(myfile);
-            myfile.Close();
-
-            GameData.Score = mySerializedData.ser_score;
-            GameData.PlayerHealth = mySerializedData.ser_lives;
-            GameData.Kills = mySerializedData.ser_kills;
+            Debug.Log("Difficulty set to " + difficulty);
+            PlayerPrefs.SetFloat(Difficulty_Key, difficulty);
         }
-
-    }
-
-    public void DeleteFile()
-    {
-        if (File.Exists(Application.persistentDataPath + "/CannonData.save"))
+        else
         {
-            File.Delete(Application.persistentDataPath + "/CannonData.save");
+            Debug.LogError("Difficulty is out of range");
         }
-
     }
+
+    public static float GetDifficulty()
+    {
+        return PlayerPrefs.GetFloat(Difficulty_Key);
+    }
+
 }

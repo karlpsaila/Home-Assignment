@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -15,7 +14,7 @@ public class EnemyScript : MonoBehaviour
 {
    
 
-    bool canbeDestroyed = false;
+     bool canbeDestroyed = false;
 
     public int hitpoints;
     public int start_strength;
@@ -31,7 +30,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _strength = start_strength;
     }
    
     // Update is called once per frame
@@ -55,17 +54,19 @@ public class EnemyScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.tag =="Bullet")
         {
-            GetComponent<ITakeDamage>().ApplyDamage(hitpoints,false);
+         GetComponent<ITakeDamage>().ApplyDamage(hitpoints, false);
         }
-        if (other.gameObject.CompareTag("charged"))
+        else if (other.gameObject.tag == "charged")
         {
-            GetComponent<ITakeDamage>().ApplyDamage(hitpoints,true);
+        GetComponent<ITakeDamage>().ApplyDamage(hitpoints, true);
         }
     }
 
@@ -81,6 +82,18 @@ public class EnemyScript : MonoBehaviour
             Instantiate(enemyBullet, transform.position, Quaternion.identity);
         }
 
+    }
+
+    void OnDestroy()
+    {
+        if (gameObject.tag == "Boss1")
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        else if (gameObject.tag == "Boss2")
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 
 
